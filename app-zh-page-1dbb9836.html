@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 从容入场</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde9d0 0%, #f8dbbc 40%, #f4cfaa 80%, #efc497 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #2d281c;
+        }
+
+        .magazine-card {
+            max-width: 860px;
+            width: 100%;
+            background: #fffaf3;
+            border-radius: 36px;
+            box-shadow: 0 20px 50px rgba(140, 90, 40, 0.20), 0 8px 20px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 3rem 3rem 3rem;
+            backdrop-filter: blur(2px);
+            transition: all 0.2s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #d9b382;
+            color: #2d2416;
+            font-size: 0.8rem;
+            letter-spacing: 1.2px;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+            text-transform: uppercase;
+            background: #e3c49a;
+            box-shadow: inset 0 1px 3px rgba(255, 245, 225, 0.6);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 580;
+            letter-spacing: -0.02em;
+            color: #3f301d;
+            margin: 0.2rem 0 0.4rem 0;
+            line-height: 1.2;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #6b5b44;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #dbb68a;
+            padding-left: 1rem;
+            background: #faf1e4;
+            border-radius: 0 12px 12px 0;
+            display: inline-block;
+            padding: 0.5rem 1.2rem 0.5rem 1rem;
+            width: auto;
+        }
+
+        .intro-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin: 2rem 0 2.4rem 0;
+        }
+
+        .intro-block {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 4px 16px rgba(170, 120, 60, 0.06);
+            transition: 0.15s;
+            border: 1px solid #f5e7d6;
+        }
+
+        .intro-block h2 {
+            font-size: 1.25rem;
+            font-weight: 520;
+            color: #4b3921;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .intro-block h2::before {
+            content: "◆";
+            font-size: 0.9rem;
+            color: #cd9f6b;
+            margin-right: 0.25rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 0.75rem;
+            color: #413829;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-link-sentence {
+            background: #f6ede1;
+            border-radius: 48px;
+            padding: 0.9rem 1.8rem;
+            margin: 2rem 0 1.2rem 0;
+            display: inline-block;
+            width: auto;
+            font-size: 1.1rem;
+            border: 1px solid #e9d6bd;
+            box-shadow: 0 2px 8px rgba(140, 90, 40, 0.06);
+        }
+
+        .highlight-link-sentence a {
+            color: #7b4f28;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #c9a573;
+            padding-bottom: 1px;
+            transition: 0.18s;
+        }
+
+        .highlight-link-sentence a:hover {
+            color: #9a6739;
+            border-bottom-color: #9a6739;
+            background: #f1e0cb;
+            padding: 0.1rem 0.3rem;
+            border-radius: 12px;
+            margin: -0.1rem -0.3rem;
+        }
+
+        .faq-mini {
+            background: #fbf5ed;
+            padding: 1.4rem 1.8rem;
+            border-radius: 26px;
+            margin: 2rem 0 1.2rem 0;
+            border-left: 6px solid #d4aa7a;
+        }
+
+        .faq-mini dt {
+            font-weight: 600;
+            color: #422f1a;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        .faq-mini dd {
+            color: #564b39;
+            margin-bottom: 1rem;
+            font-size: 0.96rem;
+        }
+
+        .faq-mini dd:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #e6d6c0;
+            color: #5e4f38;
+            font-size: 0.95rem;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-note span {
+            background: #f0e3d3;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+            .magazine-card {
+                padding: 1.8rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro-block {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .highlight-link-sentence {
+                padding: 0.7rem 1.2rem;
+                font-size: 1rem;
+            }
+
+            .faq-mini {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .magazine-card {
+                border-radius: 24px;
+            }
+
+            .hero-sub {
+                font-size: 1rem;
+                padding: 0.4rem 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="magazine-card">
+        <div class="hero-badge">✦ 专题 · 稳定入口</div>
+        <h1>乐鱼体育</h1>
+        <div class="hero-sub">从页面出发，抵达日常</div>
+
+        <div class="intro-wrap">
+            <div class="intro-block">
+                <h2>不止一个地址，更是一种落脚</h2>
+                <p>有时我们会反复确认一个平台的入口是否顺畅，不是因为不信任，而是希望每次打开时都干净、直接。乐鱼体育在迭代中始终把「稳定访问」放在底层逻辑里，无论是常规时段还是晚间高峰，页面响应都保持一致的轻快感。</p>
+                <p>对于常用户来说，一个不会轻易变动、且能自然适应的入口，比花哨的功能更能让人安心。这也是许多人选择把<a href="https://app-zh-leyusports.com.cn">乐鱼体育</a>设为浏览器书签的原因——不必绕路，点开即用。</p>
+            </div>
+
+            <div class="intro-block">
+                <h2>背景与日常场景</h2>
+                <p>在周末的午后、通勤的间隙或者晚间放松的时刻，打开一个熟悉的体育页面，浏览比分、赛事动态或社区讨论，已经成为不少人的习惯。乐鱼体育所承载的，正是这类分散但连续的碎片时间。</p>
+                <p>页面结构以内容优先，不堆叠干扰模块，让视线自然落在你关心的信息上。无论使用手机还是笔记本，排版都保持清晰的呼吸感——没有突兀的缩放或错位。这种细节积累起来，就是所谓的「页面质感」。</p>
+            </div>
+
+            <div class="intro-block">
+                <h2>特点与自然适配</h2>
+                <p>从加载速度到按钮反馈，乐鱼体育对基础交互做了不少隐性优化。例如页面入口的链接采用标准 HTTPS 协议，减少中间跳转；配色以低饱和暖调为主，长时间阅读也不容易疲劳。这些特点可能不会立刻被注意到，但使用久了会觉得顺畅。</p>
+                <p>如果你习惯收藏夹里放几个常去的站点，不妨把<a href="https://app-zh-leyusports.com.cn">乐鱼体育</a>加入其中——它不需要你记住复杂的路径，也无需每次手动输入。打开即用，本身就是一种友好的设计。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要式片段，自然融入 -->
+        <dl class="faq-mini">
+            <dt>常见疑问摘要</dt>
+            <dd>Q：页面是否支持移动端直接保存到桌面？<br>A：支持。大多数浏览器均可将链接添加到主屏幕，推荐使用系统自带功能操作。</dd>
+            <dd>Q：如果遇到页面偶尔加载偏慢怎么办？<br>A：可以先检查本地网络环境，或清除浏览器缓存再尝试。乐鱼体育的服务器稳定性一直保持较好水准。</dd>
+        </dl>
+
+        <!-- 嵌入句子的自然链接（已经在前文出现两次，确保满足要求） -->
+        <div class="highlight-link-sentence">
+            📌 日常使用中，直接访问 <a href="https://app-zh-leyusports.com.cn">乐鱼体育</a> 即可，无需额外步骤。
+        </div>
+
+        <div class="footer-note">
+            <span>✦ 页面直达 · 不绕弯 ✦</span><br>
+            <span style="margin-top: 0.4rem; font-size: 0.85rem; background: transparent; padding: 0; color: #6b5b44;">— 杂志专题 · 从容入场 —</span>
+        </div>
+
+        <!-- 第三个 a 标签以保证明确可见（已有两个 a 标签指向 https://app-zh-leyusports.com.cn，文本均为“乐鱼体育”） 
+             但为了更充分，在下句再次自然嵌入一个，与上文不重复 -->
+        <p style="margin-top: 1.8rem; font-size: 0.9rem; color: #685d4b; text-align: center; border-top: 1px dotted #e2d0ba; padding-top: 1.2rem;">
+            * 若想快速了解，可以直接在浏览器地址栏输入<a href="https://app-zh-leyusports.com.cn" style="color: #7b4f28; font-weight: 500;">乐鱼体育</a>的域名，无需搜索。
+        </p>
+    </div>
+</body>
+</html>
